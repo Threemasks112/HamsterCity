@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 3c5f6577a7b9be149b9b6a80ba472de4
+labels:
+- Audio
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8
@@ -13,11 +15,11 @@ AudioImporter:
     conversionMode: 0
     preloadAudioData: 0
   platformSettingOverrides: {}
-  forceToMono: 0
+  forceToMono: 1
   normalize: 1
   loadInBackground: 0
   ambisonic: 0
   3D: 1
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  assetBundleName: music
+  assetBundleVariant: music
