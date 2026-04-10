@@ -7,9 +7,17 @@ public class StartButtonE : MonoBehaviour
     public float rollforce = 10f;
 
     public Transform[] waypoints;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 20f;
     public float reachDistance = 1f;
+    public float ballSpinner = 5f;
 
+
+    public Transform roundaboutCenter;
+    public float orbitForce = 10f;
+    public float orbitRadius = 5f;
+    public bool orbitMode = false;
+    
+    
     private Rigidbody rb;
     private bool started = false;
     private int hitCounter = 0;
@@ -27,6 +35,7 @@ public class StartButtonE : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
         if(!started && Input.GetKeyDown(KeyCode.E))
@@ -41,7 +50,9 @@ public class StartButtonE : MonoBehaviour
          if (followPath)
         {
             FollowWaypoints();
+            RollBall();
         }
+
     }
 
     [System.Obsolete]
@@ -60,9 +71,11 @@ public class StartButtonE : MonoBehaviour
             else if (hitCounter == 3)
             {
                followPath = true;
-                rb.velocity = Vector3.zero; // stop rolling
-                rb.isKinematic = true;
+                rb.velocity = Vector3.zero; 
+                rb.isKinematic = true;              
+
             }
+            
         }
     }
 
@@ -82,5 +95,17 @@ public class StartButtonE : MonoBehaviour
             currentWaypoint++;
         }
     }
+
+    [System.Obsolete]
+    void RollBall()
+    {
+        if (rb.velocity.magnitude > 0.1f)
+        {
+            float rotationSpeed = rb.velocity.magnitude * ballSpinner;
+            transform.Rotate(rb.velocity.z * rotationSpeed, 0, -rb.velocity.x * rotationSpeed);
+        }
+    }
+
+  
     
 }
