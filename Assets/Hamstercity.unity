@@ -13861,7 +13861,7 @@ MonoBehaviour:
   - {fileID: 142902437}
   - {fileID: 840935032}
   moveSpeed: 20
-  reachDistance: 2
+  reachDistance: 0.5
   ballSpinner: 50
   roundaboutCenter: {fileID: 1748129939}
   orbitForce: 10
