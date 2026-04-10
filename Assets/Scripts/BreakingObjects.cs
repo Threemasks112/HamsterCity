@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BreakingObjects : MonoBehaviour
 {
-   public GameObject explosionEffect;  
+   public GameObject explosionEffect;
+   public ToppleingOBJ toppelingOBJ;  
+
+   //public Rigidbody hospital;
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,14 +18,17 @@ public class BreakingObjects : MonoBehaviour
 
     void Explode() //the explostion effect adder :)
     {
-        // Spawn explosion effect
+        
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        
 
-        // Make the gas station disappear
-        gameObject.SetActive(false);
+        if(toppelingOBJ != null)
+        {
+            toppelingOBJ.startFalling = true;
+        }
 
-        // Optional: destroy it after a delay
-        Destroy(gameObject, 4f);
+        gameObject.SetActive(false);      
+        Destroy(gameObject, 4f); // dealy on destructiuon
     }
 
 

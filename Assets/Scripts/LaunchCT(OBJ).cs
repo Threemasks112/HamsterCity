@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class LaunchCT : MonoBehaviour
@@ -13,7 +14,7 @@ public class LaunchCT : MonoBehaviour
             Vector3 direction = (transform.position - collision.transform.position).normalized;
             rb.AddForce(direction * launchForce, ForceMode.Impulse);
         }
+
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     
 }

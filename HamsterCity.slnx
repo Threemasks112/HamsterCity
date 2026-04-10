@@ -5,5 +5,4 @@
   <Project Path="CFXRDemo.csproj" />
   <Project Path="KinoBloom.Runtime.csproj" />
   <Project Path="CFXREditor.csproj" />
-  <Project Path="CFXR.WelcomeScreen.csproj" />
 </Solution>
