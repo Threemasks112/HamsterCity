@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CONE
   - Hamster
+  - OBJ
   layers:
   - Default
   - TransparentFX
